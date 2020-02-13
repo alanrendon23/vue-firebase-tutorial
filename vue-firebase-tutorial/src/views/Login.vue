@@ -3,8 +3,8 @@
         <h3>Sig In</h3>
         <input type="text" placeholder="Email"><br>
         <input type="password" placeholder="Password"><br>
-        <button>Connection</button>
-        <p>You don't have an account ? yo can create once</p>
+        <button @click="login">Connection</button>
+        <p>You don't have an account ? you <router-link to="/sign-up"></router-link> can create once</p>
     </div>
 </template>
 
@@ -14,7 +14,11 @@
         data(){
             return {};
         },
-        methods: {}
+        methods: {
+            login: function (){
+                this.$router.replace('home');
+            }
+        }
     }
 </script>
 <style scoped>
